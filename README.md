@@ -1,148 +1,101 @@
-{
- "cells": [
-  {
-   "cell_type": "markdown",
-   "id": "d0f8cf7b",
-   "metadata": {
-    "id": "d0f8cf7b"
-   },
-   "source": [
-    "[//]: # (Image References)\n",
-    "\n",
-    "[image1]: domain/platform_domain.png \"Platform Domain\"\n",
-    "\n",
-    "# Multi-Head DRL for Parameterised Action Spaces\n",
-    "\n",
-    "\n",
-    "## Introduction\n",
-    "\n",
-    "In this project, I trained two multi-head agents to solve the **Platform Domain** environment.\n",
-    "\n",
-    "![Platform Domain][image1]\n",
-    " \n",
-    " See [Platform Domain](https://github.com/cycraig/gym-platform) for the details.\n",
-    " \n",
-    "## Agents\n",
-    "\n",
-    "The first is multi-head DQN or MH-DQN for short. It is inspired from [Multi-Pass Q-Networks for Deep Reinforcement Learning with\n",
-    "Parameterised Action Spaces](https://arxiv.org/pdf/1905.04388.pdf).\n",
-    "\n",
-    "The second is multi-head TD3 or MH-TD3 for short. It is kind of fusion between MH-DQN and [TD3](https://arxiv.org/pdf/1802.09477.pdf).\n",
-    "\n",
-    "\n",
-    "## Dependencies\n",
-    "\n",
-    "To set up your python environment to run the code in this repository, follow the instructions below.\n",
-    "\n",
-    "\n",
-    "1. Create (and activate) a new environment with Python 3.9.\n",
-    "\n",
-    "\t- __Linux__ or __Mac__: \n",
-    "\t```bash \n",
-    "    conda create --name drlnd \n",
-    "    source activate drlnd\n",
-    "\t```\n",
-    "\t- __Windows__: \n",
-    "\t```bash\n",
-    "\tconda create --name drlnd \n",
-    "\tactivate drlnd\n",
-    "\t```\n",
-    "    \n",
-    "    \n",
-    "2. Follow the instructions in [Pytorch](https://pytorch.org/) web page to install pytorch and its dependencies (PIL, numpy,...). For __Windows__ or __Linux__ and __cuda 11.7__\n",
-    "\n",
-    "    ```bash\n",
-    "    conda install pytorch torchvision torchaudio pytorch-cuda=11.7 -c pytorch -c nvidia\n",
-    "    ```\n",
-    "\t\n",
-    "3. Follow the instructions in [Platform Domain](https://github.com/cycraig/gym-platform) to install the environment. \n",
-    "\n",
-    "\t\n",
-    "4. Clone the repository, and navigate to your working folder.  Then, install several dependencies.\n",
-    "```bash\n",
-    "git clone https://github.com/eljandoubi/hybrid-RL-platfrom.git\n",
-    "cd hybrid-RL-platfrom\n",
-    "pip install .\n",
-    "```\n",
-    "\n",
-    "## Quick Start\n",
-    "(__Make sure that your `path`is deferent from `saved/MH-DQN` and `saved/MH-TD3`__)\n",
-    "\n",
-    "You can train, test and visualization an agent by following instructions below.\n",
-    "\n",
-    "For MH-DQN agent with default settings and save it your save folder `path` , run :\n",
-    "\n",
-    "\n",
-    "```bash\n",
-    "python solve_platform.py --path path\n",
-    "```\n",
-    "If you want to switch to MH-TD3 agent, all you need is :\n",
-    "\n",
-    "```bash\n",
-    "python solve_platform.py --agent_name MH_TD3 --path path\n",
-    "```\n",
-    "\n",
-    "You can choose which task to execute (train, test, visu or all) by the task argument.\n",
-    "\n",
-    "For example, to visualize an agent `agent` saved in `path`:\n",
-    "```bash\n",
-    "python solve_platform.py --agent_name agent --task visu --path path\n",
-    "```\n",
-    "\n",
-    "For more options, see the help :  \n",
-    "\n",
-    "```bash\n",
-    "python solve_platform.py -h\n",
-    "```\n",
-    "\n",
-    "\n",
-    "## Verification\n",
-    "\n",
-    "To evaluate (`task=test`) and/or watch `task=visu` my optimal agent `agent` (the default `--path` contains my saved models):\n",
-    "\n",
-    "```bash\n",
-    "python solve_platform.py --agent_name agent --task task\n",
-    "```\n",
-    "\n",
-    "To train the optimal MH_TD3 (mean reward : 0.9975) or MH_DQN (mean reward : 0.9998):\n",
-    "```bash\n",
-    "python solve_platform.py --agent_name agent --task train --path path\n",
-    "```"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "id": "b38e587f",
-   "metadata": {
-    "id": "b38e587f"
-   },
-   "outputs": [],
-   "source": []
-  }
- ],
- "metadata": {
-  "colab": {
-   "provenance": []
-  },
-  "kernelspec": {
-   "display_name": "Python 3 (ipykernel)",
-   "language": "python",
-   "name": "python3"
-  },
-  "language_info": {
-   "codemirror_mode": {
-    "name": "ipython",
-    "version": 3
-   },
-   "file_extension": ".py",
-   "mimetype": "text/x-python",
-   "name": "python",
-   "nbconvert_exporter": "python",
-   "pygments_lexer": "ipython3",
-   "version": "3.9.13"
-  }
- },
- "nbformat": 4,
- "nbformat_minor": 5
-}
+[//]: # (Image References)
+
+[image1]: domain/platform_domain.png "Platform Domain"
+
+# Multi-Head DRL for Parameterised Action Spaces
+
+
+## Introduction
+
+In this project, I trained two multi-head agents to solve the **Platform Domain** environment.
+
+![Platform Domain][image1]
+ 
+ See [Platform Domain](https://github.com/cycraig/gym-platform) for the details.
+ 
+## Agents
+
+The first is multi-head DQN or MH-DQN for short. It is inspired from [Multi-Pass Q-Networks for Deep Reinforcement Learning with
+Parameterised Action Spaces](https://arxiv.org/pdf/1905.04388.pdf).
+
+The second is multi-head TD3 or MH-TD3 for short. It is kind of fusion between MH-DQN and [TD3](https://arxiv.org/pdf/1802.09477.pdf).
+
+
+## Dependencies
+
+To set up your python environment to run the code in this repository, follow the instructions below.
+
+
+1. Create (and activate) a new environment with Python 3.9.
+
+	- __Linux__ or __Mac__: 
+	```bash 
+    conda create --name drlnd 
+    source activate drlnd
+	```
+	- __Windows__: 
+	```bash
+	conda create --name drlnd 
+	activate drlnd
+	```
+    
+    
+2. Follow the instructions in [Pytorch](https://pytorch.org/) web page to install pytorch and its dependencies (PIL, numpy,...). For __Windows__ or __Linux__ and __cuda 11.7__
+
+    ```bash
+    conda install pytorch torchvision torchaudio pytorch-cuda=11.7 -c pytorch -c nvidia
+    ```
+	
+3. Follow the instructions in [Platform Domain](https://github.com/cycraig/gym-platform) to install the environment. 
+
+	
+4. Clone the repository, and navigate to your working folder.  Then, install several dependencies.
+```bash
+git clone https://github.com/eljandoubi/hybrid-RL-platfrom.git
+cd hybrid-RL-platfrom
+pip install .
+```
+
+## Quick Start
+(__Make sure that your `path`is deferent from `saved/MH-DQN` and `saved/MH-TD3`__)
+
+You can train, test and visualization an agent by following instructions below.
+
+For MH-DQN agent with default settings and save it your save folder `path` , run :
+
+
+```bash
+python solve_platform.py --path path
+```
+If you want to switch to MH-TD3 agent, all you need is :
+
+```bash
+python solve_platform.py --agent_name MH_TD3 --path path
+```
+
+You can choose which task to execute (train, test, visu or all) by the task argument.
+
+For example, to visualize an agent `agent` saved in `path`:
+```bash
+python solve_platform.py --agent_name agent --task visu --path path
+```
+
+For more options, see the help :  
+
+```bash
+python solve_platform.py -h
+```
+
+
+## Verification
+
+To evaluate (`task=test`) and/or watch `task=visu` my optimal agent `agent` (the default `--path` contains my saved models):
+
+```bash
+python solve_platform.py --agent_name agent --task task
+```
+
+To train the optimal MH_TD3 (mean reward : 0.9975):
+```bash
+python solve_platform.py --agent_name MH_TD3 --task train --path path --eps_end 0.01 --eps_decay 0.995 --d 16
+```
