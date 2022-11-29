@@ -45,11 +45,14 @@ To set up your python environment to run the code in this repository, follow the
     ```bash
     conda install pytorch torchvision torchaudio pytorch-cuda=11.7 -c pytorch -c nvidia
     ```
-	
-3. Follow the instructions in [Platform Domain](https://github.com/cycraig/gym-platform) to install the environment. 
+3. Install matplotlib
+    ```bash
+    conda install -c conda-forge matplotlib
+    ```
+4. Follow the instructions in [Platform Domain](https://github.com/cycraig/gym-platform) to install the environment. 
 
 	
-4. Clone the repository, and navigate to your working folder.  Then, install several dependencies.
+5. Clone the repository, and navigate to your working folder.  Then, install several dependencies.
 ```bash
 git clone https://github.com/eljandoubi/hybrid-RL-platfrom.git
 cd hybrid-RL-platfrom
