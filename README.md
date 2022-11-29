@@ -53,7 +53,6 @@ To set up your python environment to run the code in this repository, follow the
 ```bash
 git clone https://github.com/eljandoubi/hybrid-RL-platfrom.git
 cd hybrid-RL-platfrom
-pip install .
 ```
 
 ## Quick Start
