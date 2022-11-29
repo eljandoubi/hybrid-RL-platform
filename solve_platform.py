@@ -46,7 +46,7 @@ if __name__=="__main__":
     print(agent)
     
     
-    if args.task in ["all","tain"]:
+    if args.task in ["all","train"]:
         print("trainer :", train_args)
         curves_train=trainer(env,agent,**train_args)
         plot(curves_train,["Episode #","Score","Average Score"],"train",agent.path)
