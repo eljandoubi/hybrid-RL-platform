@@ -95,7 +95,7 @@ To evaluate (`task=test`) and/or watch `task=visu` my optimal agent `agent` (the
 python solve_platform.py --agent_name agent --task task
 ```
 
-To train the optimal MH_TD3 (mean reward : 0.9975):
+To train the optimal MH_TD3 (mean reward : 0.9975) or MH_DQN (mean reward : 0.9998):
 ```bash
-python solve_platform.py --agent_name MH_TD3 --task train --path path --eps_end 0.01 --eps_decay 0.995 --d 16
+python solve_platform.py --agent_name agent --task train --path path
 ```
